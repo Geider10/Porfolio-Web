@@ -1,0 +1,97 @@
+---
+import html from "../icons/html.astro"
+import css from "../icons/css.astro"
+import js from "../icons/js.astro"
+import Web from "../icons/web.astro"
+const listProject = [
+    {
+        titulo:"Soy el titulo",
+        descripcion:"Ecomerce con chat bot de ayuda y API de Mercado pago",
+        img:"/images/selfie.webp",
+        web:"https://google.com",
+        tag:[
+            {name:"HTML",
+            },
+            {
+            name: "CSS",
+            }
+        ]
+    },
+    {
+        titulo:"Soy el titulo 2",
+        descripcion:"Organiza tu tiempo con tareas, facil de usar y aprender. IA que te hace las tareas",
+        img:"/images/selfie.webp",
+        web:"https://google.com",
+        tag:[
+            {name:"HTML",
+            },
+            {
+            name: "CSS",
+            },
+            {
+            name: "JavaScript",
+            }
+        ]
+    }
+]    
+
+---
+<style>
+    article{
+        width: 350px;
+        height: auto;
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+    }
+    h3{
+        color:#5ccda7;
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    p{
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0;
+        margin-bottom:10px;
+    }
+    img{
+        width: 100%;
+        height: 200px;
+    }
+    div{
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    span{
+        background-color: #b1b1b15b;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 15px;
+        font-weight:500;
+
+    }
+    a{
+        background-color: #b1b1b15b;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 15px;
+        margin-left: 10px;
+        padding: 5px;
+        font-weight:500;
+    }
+</style>
+{
+    listProject.map(({titulo,descripcion,img,tag,web})=>(
+        <article>
+            <h3>{titulo} <a href={web} target="_blank"> Sitio web <Web></Web></a></h3>
+            <p>{descripcion}</p>
+            <img src={img} alt={`Captura de pantalla del proyecto ${img}`}>
+            <div>
+                {tag.map((t)=>(
+                    <span> {t.name}</span>
+                ))}</div>
+        </article>
+    ))
+}

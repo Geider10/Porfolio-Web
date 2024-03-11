@@ -1,0 +1,68 @@
+---
+import User from "../icons/user.astro";
+---
+<section>
+    <div class="content__titulo">
+        <User></User>
+       <h2>Sobre mi</h2>
+    </div>
+    <div class="content__body">
+        <div class="body__detalles">
+            <p> <span> dasdasdadad</span>nemo laborum repudiandae unde beatae accusantium reiciendis quasi, quis tempora adipisci provident! Accusantium, vel sint!
+              Assumenda praesentium cum q
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, possimus natus repellat fugit mollitia tempore nemo laborum repudiandae unde beatae accusantium reiciendis quasi, quis tempora adipisci provident! Accusantium, vel sint!
+              Assumenda praesentium cum
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, possimus natus repellat fugit mollitia tempore nemo laborum repudiandae unde beatae accusantium reiciendis quasi, quis tempora adipisci provident! Accusantium, vel sint!
+             a praesentium cu
+            </p>
+        </div>
+        <div class="body__img">
+            <img src="/images/body.webp" alt="cuerpo completo">
+        </div>
+    </div>
+</section>
+<style>
+    section{
+        padding: 10px;
+    }
+    .content__titulo{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .content__titulo h2{
+        font-size: 28px;
+    }
+    .content__body{
+        display: grid;
+        grid-template-areas: 
+        "detalles detalles img"
+        ;
+        grid-template-columns: 1fr 1fr 300px;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+    .body__detalles{
+        grid-area: detalles;
+    }
+    .body__detalles p{
+        margin-bottom: 10px;
+        font-weight: 500;
+
+    }
+    .body__img{
+        grid-area:img;
+    }
+    .body__img img{
+        width: 100%;
+        height: 350px;
+    }
+
+    span{
+        color: #daa000e0;
+
+    }
+</style>

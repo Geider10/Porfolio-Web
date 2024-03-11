@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TipoConteiner from '../components/SelectContainer.astro';
+import HomeMain from '../components/home.astro';
+import Project from "../components/projects.astro"
+import SobreMi from "../components/sobreMi.astro"
+---
+
+<Layout title="Portfolio Geider - Desarrollador y Programador Web" description='Trabajo de manera contanste'>
+	<main>
+		<TipoConteiner id="home">
+			<HomeMain></HomeMain>
+		</TipoConteiner>
+		
+		<TipoConteiner id="projects" class="">
+			<Project></Project>
+		</TipoConteiner>
+		<TipoConteiner id="about" class="">
+			<SobreMi></SobreMi>
+			
+		</TipoConteiner>
+	</main>
+</Layout>
+<style>
+	main{
+		max-width: 800px;
+		margin: 0 auto;
+		border: 1px solid;
+	}
+</style>
