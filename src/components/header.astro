@@ -1,37 +1,51 @@
-<header>
+<script>
+    const moon = "🌙",sun ="☀️";
+    const listaLight = document.querySelectorAll("[data-modoLight]");
+    const btnModo = document.getElementById("btnModo");
+    btnModo?.addEventListener("click",(e)=>{
+        e.preventDefault();
+        if(btnModo.textContent == sun){
+           btnModo.textContent = moon;
+            modoLight();
+        }
+       else{
+           btnModo.textContent = sun;
+           modoDark();
+       }
+    })
+    const modoLight= ()=>{
+        listaLight.forEach(element => { element.classList.add("modoLight")});
+        btnModo?.textContent == moon;
+    }
+    const modoDark=()=>{
+        listaLight.forEach(element => { element.classList.remove("modoLight")});
+        btnModo?.textContent == moon;
+    }
+</script>
+<header data-modoLight>
     <nav>
-        <a href="#home">Inicio</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#about">Sobre mi</a>
-        <a href="#" class="btnDark">🌜</a>
+        <a href="#home" data-modoLight>Inicio</a>
+        <a href="#projects" data-modoLight>Proyectos</a>
+        <a href="#about" data-modoLight>Sobre mi</a>
+        <a href="" id="btnModo" data-modoLight>☀️</a>
     </nav>
 </header>
 <style>
     header{
-        max-width: 800px;
+        max-width: 850px;
         margin: 0 auto;
+        margin-bottom: 80px;
     }
     nav{
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 30px;
-        padding: 10px 0;
-        border: 1px solid black;
-      
+        padding: 20px 0;
     }
-    nav a{
-        list-style: none;
-        text-decoration: none;
-        color: #050505;
-        font-size: 20px;
-        font-weight:500;
-        cursor: pointer;
-    }
-    .btnDark{
-        display: inline-block;
-        padding: 5px;
-        background-color: #050505;
-        border-radius: 50%;
+    @media (max-width:400px) {
+        header{
+        margin-bottom: 40px;
+        }
     }
 </style>

@@ -7,17 +7,17 @@ import Gmail from '../icons/gmail.astro';
 ---
 <section>
     <div class="content__perfil">
-        <h1>Hola, <span class="c1">soy Geider Frias</span></h1>
-        <h2>Desarrollador Front End. <span class="c2">+3 años formación universitaria en Argentina.</span>
-            Soluciono problemas creando aplicaciones y me adapto rapido a cualquier proyecto o equipo.</h2>
+        <div class="perfil__title"> <h1>Hola, <span class="c-primario">soy Geider</span></h1> <span class="btnStatic">Disponible para trabajar</span> </div>
+        <h2>Desarrollador Front End Web y Backend .NET. <span class="c-secundario">+3 años formación universitaria en Argentina.</span>
+            Soluciono problemas creando aplicaciones y me adapto rapido a cualquier proyecto o equipo de trabajo.</h2>
     </div>
     <div class="content__foto">
         <img src="/images/selfie.webp" alt="foto tipo selfie">
     </div>
     <nav>
-        <a href="https://www.linkedin.com/in/geiderfrias/" target="_blank"><Linkedin></Linkedin>Linkedin</a>
-        <a href="https://github.com/Geider10" target="_blank"><GitHub></GitHub>GitHub</a>
-        <a href="https://drive.google.com/file/d/1AiAAFZbi53abexY8RCgOdS3v5GUYpRqL/view?usp=sharing" target="_blank"><CV></CV>CV</a>
+        <a href="https://www.linkedin.com/in/geiderfrias/" target="_blank"  class="btnDinamic"  data-modoLight><Linkedin></Linkedin>Linkedin</a>
+        <a href="https://github.com/Geider10" target="_blank" class="btnDinamic" data-modoLight><GitHub></GitHub>GitHub</a>
+        <a href="https://drive.google.com/file/d/1AiAAFZbi53abexY8RCgOdS3v5GUYpRqL/view?usp=sharing" target="_blank" class="btnDinamic" data-modoLight><CV></CV>CV</a>
     </nav>
 </section>
 <style>
@@ -27,7 +27,7 @@ import Gmail from '../icons/gmail.astro';
         "perfil perfil foto"
         "redes redes redes"
         ;
-        grid-template-columns: 1fr 1fr 250px;
+        grid-template-columns: 1fr 1fr 200px;
         grid-template-rows: auto 60px;
     }
     .content__perfil{
@@ -37,24 +37,28 @@ import Gmail from '../icons/gmail.astro';
     .content__perfil h1{
         font-size: 32px;
         font-weight: 800;
-        margin-bottom: 10px;
+        display: inline-block;
+        margin-right: 10px;
     }
     .content__perfil h2{
         font-size: 1rem;
         font-weight: 500;
-
+        margin-top: 10px;
+    }
+    .perfil__title{
+        display: flex;
+        justify-content: start;
+        align-items: center;
     }
     .content__foto{
         grid-area: foto;
-        display: flex;
-        justify-content: center;
-        
+        text-align: center;
     }
     .content__foto img{
         width: 120px;
         height: 120px;
         border-radius: 50%;
-           padding: 10px;
+        padding: 10px;
     }
    	nav{
 		display: flex;
@@ -63,21 +67,42 @@ import Gmail from '../icons/gmail.astro';
         grid-area: redes;
 		gap: 10px;
 	}
-	a{
-        display: flex;
+    .off{
+        display: none;
+    }
+    @media (max-width:650px) {
+    section{
+        display: grid;
+        grid-template-areas:
+        "perfil perfil"
+        "redes redes";
+        grid-template-columns: 1fr 1fr;
+    }
+    .perfil__title{
+        flex-wrap: wrap;
+    }
+    .content__foto{
+        display: none;
+    }
+    }
+    @media (max-width:400px) {
+    section{
+        display: grid;
+        grid-template-areas:
+        "perfil"
+        "redes";
+        grid-template-columns: 1fr;
+    }
+    .content__perfil h1{
+        font-size: 28px;
+    }
+    .perfil__title{
+        flex-direction: column;
         align-items: center;
-        gap: 3px;
-		background-color: #b1b1b15b;
-		padding: 5px 10px;
-		border-radius: 20px;
-		cursor: pointer;
-        font-size: 15px;
-        font-weight:500;
-	}
-    .c1{
-        color: #5ccda7;
     }
-    .c2{
-        color: #daa000e0;
+    .content__foto{
+        display: none;
     }
+    }
+
 </style>

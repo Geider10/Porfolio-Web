@@ -27,8 +27,20 @@ import Card from "../components/cardProject.astro"
     }
     .body__projects{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fill,minmax(360px,1fr));
         justify-items: center;
-        gap: 20px;
+        gap: 10px;
+    }
+    @media (max-width:650px) {
+        .body__projects{
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+    @media (max-width:400px) {
+        .header__projects{
+            justify-content: center;
+        }
+
     }
 </style>
