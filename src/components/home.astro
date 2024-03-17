@@ -9,7 +9,7 @@ import Gmail from '../icons/gmail.astro';
     <div class="content__perfil">
         <div class="perfil__title"> <h1>Hola, <span class="c-primario">soy Geider</span></h1> <span class="btnStatic">Disponible para trabajar</span> </div>
         <h2>Desarrollador Front End Web y Backend .NET. <span class="c-secundario">+3 años formación universitaria en Argentina.</span>
-            Soluciono problemas creando aplicaciones y me adapto rapido a cualquier proyecto o equipo de trabajo.</h2>
+            Programo para crear soluciones innovadoras y me adapto de manera efieciente a cualquier proyecto Web.</h2>
     </div>
     <div class="content__foto">
         <img src="/images/selfie.webp" alt="foto tipo selfie">
@@ -24,11 +24,13 @@ import Gmail from '../icons/gmail.astro';
     section{
         display: grid;
         grid-template-areas: 
-        "perfil perfil foto"
-        "redes redes redes"
+        "perfil  foto"
+        "redes  redes"
         ;
-        grid-template-columns: 1fr 1fr 200px;
-        grid-template-rows: auto 60px;
+        grid-template-columns: 1fr  120px;
+        grid-template-rows: auto auto ;
+        border: 1px solid;
+        margin-top: 80px;
     }
     .content__perfil{
         grid-area: perfil;
@@ -52,20 +54,19 @@ import Gmail from '../icons/gmail.astro';
     }
     .content__foto{
         grid-area: foto;
-        text-align: center;
+        align-self: center;
+        padding: 10px;
     }
     .content__foto img{
         width: 120px;
-        height: 120px;
         border-radius: 50%;
-        padding: 10px;
     }
    	nav{
 		display: flex;
 		justify-content: center;
 		align-items: center;
         grid-area: redes;
-		gap: 10px;
+		gap: 20px;
 	}
     .off{
         display: none;

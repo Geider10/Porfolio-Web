@@ -60,20 +60,21 @@ const colores = "#ececec";
 	}
 	.btnStatic{
 		display: inline-block;
-		padding: 5px;
+		padding: 5px 10px;
 		border-radius: 20px;
 		font-size: 13px;
-		background-color: #8f8f8f;
+		background-color: #0380b1
 	}
 	.btnDinamic{
 		display: inline-flex;
         align-items: center;
         gap: 3px;
-		padding: 5px 10px;
-		border-radius: 5px;
+		padding: 5px;
+		border-radius: 10px;
 		font-size: 1rem;
 		cursor: pointer;
-		background-color: cadetblue;
+		background-color:#8a8a8ac9;
+		border: 1px solid #b4b4b4c9;
 	}
 	.c-primario{
 		color: #5ccda7;
@@ -84,6 +85,12 @@ const colores = "#ececec";
 	.off{
 		display:none;
 	}
+
+	#header-nav {
+        animation: blur linear both 0.5s;
+        animation-timeline: scroll();
+        animation-range: 0 500px;
+      }
 	@media (prefers-reduced-motion: reduce){
 		html{
 			scroll-behavior: auto;

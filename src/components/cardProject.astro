@@ -1,50 +1,53 @@
 ---
-import html from "../icons/html.astro"
-import css from "../icons/css.astro"
-import js from "../icons/js.astro"
+import Html from "../icons/html.astro"
+import Css from "../icons/css.astro"
+import Js from "../icons/js.astro"
+import Sass from "../icons/sass.astro"
+import Bootstrap from "../icons/bootstrap.astro"
 import Web from "../icons/web.astro"
+
+const TAGS = {
+    Html:{
+        name: "HTML",
+        icon: Html
+    },
+    Css:{
+        name: "CSS",
+        icon: Css
+    },
+    Sass:{
+        name: "SASS",
+        icon: Sass
+    },
+    Bootstrap:{
+        name: "Bootstrap",
+        icon: Bootstrap
+    },
+    JavaScript:{
+        name: "JavaScript",
+        icon: Js
+    }
+}
 const listProject = [
     {
         titulo:"Ecomerce de calzados",
         descripcion:"Es una app dinamica para hacer compras. Destaco API de Mercado Pago y un Chat Bot asistente.",
         img:"/images/ecomerce1.webp",
         web:"https://proyecto-final-desarrollo-web-gold.vercel.app/index.html",
-        tag:[
-            {name:"HTML",
-            },
-            {
-            name: "CSS",
-            },
-            {name:"SASS",
-            },
-            {name:"Bootstrap",
-            },
-            {name:"JavaScript",
-            },
-        ]
+        tag:[TAGS.Html, TAGS.Css, TAGS.Sass, TAGS.Bootstrap, TAGS.JavaScript]
     },
     {
         titulo:"Orden Day",
         descripcion:"Esta app organiza tu dia con tareas, es facil de usar y aprender. Incluye IA para crear las tareas automaticamente.",
         img:"/images/trello1.webp",
         web:"https://google.com",
-        tag:[
-            {name:"HTML",
-            },
-            {
-            name: "CSS",
-            },
-            {
-            name: "JavaScript",
-            }
-        ]
+        tag:[TAGS.Html, TAGS.Css, TAGS.JavaScript]
     }
 ]    
-
 ---
 <style>
     article{
-        width: 360px;
+        max-width: 600px;
         height: auto;
         padding: 10px;
         border: 1px solid;
@@ -53,7 +56,7 @@ const listProject = [
     h3{
         text-decoration: underline;
         font-size: 22px;
-        font-weight: 700;
+        font-weight: 600;
         display: inline-block;
         vertical-align: top; 
         margin-right: 5px;
@@ -61,21 +64,32 @@ const listProject = [
     p{
         margin-bottom:20px;
     }
-    img{
+    .imgProyecto{
+        width: 100%;
+        position: relative;
+    }
+    .imgProyecto img{
         width: 100%;
         height: 200px;
     }
-    div{
+    .imgProyecto a{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+    .tecno{
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 20px;
     }
+    .tecno span{
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        color: currentColor;
+    }
     @media (max-width:400px){
-        article{
-            padding: 0;
-            width: 300px;
-        }
         h3{
             text-align: center;
             display: block;
@@ -90,7 +104,7 @@ const listProject = [
         img{
             height: 180px;
         }
-        div{
+        .tecno{
             justify-content: center;
         }
     }
@@ -99,13 +113,16 @@ const listProject = [
     listProject.map(({titulo,descripcion,img,tag,web})=>(
         <article>
             <h3 class="c-primario">{titulo} </h3>
-            <a href={web} target="_blank" class="btnDinamic" data-modoLight> <Web></Web> Sitio web </a>
             <p>{descripcion}</p>
-            <img src={img} alt={`Captura de pantalla del proyecto ${img}`}>
-            <div>
-                {tag.map((t)=>(
-                    <span class="btnStatic"> {t.name}</span>
-                ))}</div>
+            <div class="imgProyecto">
+                <img src={img} alt={`Captura de pantalla del proyecto ${img}`}>
+                <a href={web} target="_blank" class="btnDinamic" data-modoLight> <Web></Web> Sitio web </a>
+            </div>
+            <div class="tecno">
+                {tag.map((tt)=>(
+                    <span class="btnStatic"><tt.icon class="size-4"></tt.icon> {tt.name}</span>
+                ))}
+            </div>
         </article>
     ))
 }
