@@ -12,12 +12,12 @@ import Gmail from '../icons/gmail.astro';
             Programo para crear soluciones innovadoras y me adapto rápido a cualquier proyecto Web.</h2>
     </div>
     <div class="content__foto">
-        <img src="/images/selfie.webp" alt="foto tipo selfie">
+        <img src="/images/g4.webp" alt="foto tipo selfie">
     </div>
     <nav>
         <a href="https://www.linkedin.com/in/geiderfrias/" target="_blank"  class="btnDinamic"  data-modoLight><Linkedin></Linkedin>Linkedin</a>
         <a href="https://github.com/Geider10" target="_blank" class="btnDinamic" data-modoLight><GitHub></GitHub>GitHub</a>
-        <a href="https://drive.google.com/file/d/1AiAAFZbi53abexY8RCgOdS3v5GUYpRqL/view?usp=sharing" target="_blank" class="btnDinamic" data-modoLight><CV></CV>CV</a>
+        <a href="https://drive.google.com/file/d/1S69A-NaVEaXSny42v6Go6Gii47raK_3E/view?usp=sharing" target="_blank" class="btnDinamic" data-modoLight><CV></CV>CV</a>
     </nav>
 </section>
 <style>
@@ -27,7 +27,7 @@ import Gmail from '../icons/gmail.astro';
         "perfil  foto"
         "redes  redes"
         ;
-        grid-template-columns: 1fr  120px;
+        grid-template-columns: 1fr  130px;
         grid-template-rows: auto auto ;
         margin-top: 80px;
     }
@@ -52,13 +52,20 @@ import Gmail from '../icons/gmail.astro';
         align-items: center;
     }
     .content__foto{
+        display: grid;
         grid-area: foto;
         align-self: center;
-        padding: 10px;
+        align-items: center;
+        /* align-content: center; */
+        /* padding: 10px; */
+        height: 130px;
+        width: 100%;
     }
     .content__foto img{
-        width: 120px;
-        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 20px;
     }
    	nav{
 		display: flex;

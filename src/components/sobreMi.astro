@@ -8,20 +8,21 @@ import User from "../icons/user.astro";
     </div>
     <div class="content__body">
         <div class="body__detalles">
-            <p> Me nombre es <span class="c-primario">Geider Frias </span> y soy de Argentina. <span class="c-secundario">
+            <p> Mi nombre es <span class="c-primario">Geider Frias </span> y soy de Argentina. <span class="c-secundario">
                 Me estoy formando en el mundo TI desde 2021 creando proyectos de alto valor</span>. Me especializo en el Desarrollo Web.
             </p>
-            <p>Termine una tecnicatura de Videojuegos y empecé la tecnicatura de 
-                <span class="c-secundario">Desarrollo de Software</span>. Además, estoy haciendo una carrera virtual de
-                <span class="c-secundario"> Desarrollo Full Stack Web</span>.
+            <p>Termine la tecnicatura de Videojuegos y empecé la tecnicatura de 
+                <span class="c-secundario">Desarrollo de Software.</span> Además, estoy haciendo una carrera online de
+                <span class="c-secundario"> Desarrollo Full Stack.</span>
             </p>
             <p>Habilidades que destaco, soy flexible a nuevos desafíos, resuelvo problemas complejos y
-               <span class="c-secundario"> organizo el desarrollo de los proyectos en tiempos y pasos</span>.
+               <span class="c-secundario">organizo el desarrollo de los proyectos en tiempos.</span>
             </p>
         </div>
         <div class="body__img">
-            <img src="/images/foto.webp" alt="cuerpo completo">
+            <img src="/images/f3.webp" alt="cuerpo completo">
         </div>
+        
     </div>
 </section>
 <style>
@@ -47,9 +48,9 @@ import User from "../icons/user.astro";
     }
     .body__detalles{
         width: 65%;
-    }
-    .body__detalles p{
-        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
     .body__img{
         width: 30%;
